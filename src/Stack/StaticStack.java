@@ -7,6 +7,15 @@ public class StaticStack<T> extends ArrayStack<T>{
     }
 
     @Override
+    public String toString() {
+        String dataArrayReturn = "[ ";
+        for (T data : this.dataArray) {
+            dataArrayReturn += data + " ";
+        }
+        return dataArrayReturn + "]";
+    }
+
+    @Override
     public void push(T data) {
         try {
             if (!this.isFull()) {

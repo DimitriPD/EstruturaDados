@@ -11,16 +11,6 @@ public abstract class ArrayStack<T> implements IArrayStack<T> {
         this.size = size;
     }
 
-    public String getDataArray() {
-        String dataArrayReturn = "[ ";
-        for (T data : this.dataArray) {
-            if (data != null) {
-                dataArrayReturn += data + " ";
-            }
-        }
-        return dataArrayReturn + "]";
-    }
-
     @Override
     public void push(T data) {
         System.out.println("Method not implemented yet;");
