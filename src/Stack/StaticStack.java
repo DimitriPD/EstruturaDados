@@ -1,3 +1,5 @@
+package Stack;
+
 public class StaticStack<T> extends ArrayStack<T>{
 
     public StaticStack(int size) {

@@ -1,3 +1,5 @@
+package Stack;
+
 public abstract class ArrayStack<T> implements IArrayStack<T> {
     protected int top = 0;
     protected T[] dataArray;
