@@ -23,11 +23,15 @@ public class Queue<T> implements IQueue<T> {
         try {
             if (!this.isFull()) {
                 this.dataArray[top] = data;
-                this.top += 1;
+                this.top = move(this.top);
             }
         } catch (IllegalStateException e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    public int move(int topParam) {
+        return topParam + 1 % this.dataArray.length;
     }
 
     public T remove() {
