@@ -16,29 +16,36 @@ public class Queue<T> implements IQueue<T> {
         for (T data : dataArray) {
             res += data + " ";
         }
-        return res + "]";
+        return res + "]" + " | top: " + this.top + " | base: " + this.base;
     }
 
     public void add(T data) {
         try {
             if (!this.isFull()) {
-                this.dataArray[top] = data;
-                this.top = move(this.top);
+                this.dataArray[this.top] = data;
+                this.top = this.move(this.top);
             }
-        } catch (IllegalStateException e) {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
 
-    public int move(int topParam) {
-        return topParam + 1 % this.dataArray.length;
+    public int move(int position) {
+        return (position + 1) % this.dataArray.length;
     }
 
     public T remove() {
-        T removed = this.dataArray[base];
-        this.dataArray[base] = null;
-        this.base += 1;
-        return removed;
+        try {
+            if (!this.isEmpty()) {
+                T removed = this.dataArray[base];
+                this.dataArray[base] = null;
+                this.base = this.move(this.base);
+                return removed;
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
     }
 
     public void clear() {
@@ -50,15 +57,15 @@ public class Queue<T> implements IQueue<T> {
     }
 
     public boolean isFull() {
-        if (this.top >= this.dataArray.length) {
+        if (this.top == this.base && this.dataArray[this.top] != null) {
             throw new IllegalStateException("Ta cheio meu nobre.");
         }
         return false;
     }
 
     public boolean isEmpty() {
-        if (this.top == this.base) {
-            return true;
+        if (this.top == this.base && this.dataArray[this.base] == null) {
+            throw new IllegalStateException("Ta vazio meu nobre.");
         }
         return false;
     }
