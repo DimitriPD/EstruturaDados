@@ -1,0 +1,88 @@
+arvore.add(10) root = null | root = 10;
+arvore.add(8)  
+	newNode = 8=;
+	currentNode = root = 10=;
+	8 < 10  true;
+	10.getLeftNode != null  false;
+	10.setLeftNode = 8;
+	break;
+arvore.add(5);
+	newNode = 5;
+	currentNode = root = 10;
+	5 < 10  true;
+	10.getLeftNode(8) != null  true;
+	currentNode = 10.getLeftNode = 8;
+	5 < 8  true;
+	8.getLeftNode(8) != null  false;
+	8.setLeftNode = 5;
+	break;
+
+arvore.add(9);
+	newNode = 9
+	currentNode = root = 10;
+	9 < 10  true;
+	10.getLeftNode(8) != null  true;
+	currentNode = 10.getLeftNode = 8;
+	9 < 8  false;
+	8.getRightNode != null  false;
+	8.setRightNode = 9;
+	break;
+
+arvore.add(7);
+arvore.add(18);
+arvore.add(13);
+arvore.add(20);
+
+
+Console = 5, 7, 8, 9, 10, 13, 18, 20;
+inorder = LEFT, UP, RIGHT
+inorder(10)
+10 != null  true;
+	10.inorderLEFT(8);      <---------------------------------
+		8 != null  true;                                     |
+			8.inorderLEFT(5)        <---------               |          
+				5 != null  true;             |               | 
+					5.inorderLEFT(null)      |               | 
+						null != null  false; |               | 
+					5.sout(5)                |               | 
+					5.inorderRIGHT(7)        |   <------     |
+						7 != null  true;               |     |
+							7.inorderLEFT(null)        |     |
+								null != null  false;   |     |
+							7.sout(7)                  |     |
+							7.inorderRIGHT(null)       |     |
+								null != null false;    |     |
+			8.sout(8);                                       |
+			8.inorderRIGHT(9);                               |    <---------
+				9 != null  true;                                           |
+					9.inorderLEFT(null);                                   |
+						null != null  false;                               |
+					9.sout(9);                                             |
+					9.inorderLEFT(null)                                    |
+						null != null  false;                               |
+
+	10.sout(10);
+	10.inorderRIGHT(18);       <----------END-----------
+		18 != null  true;                              |
+			18.inorderLEFT(13);       <--------        |
+				13 != null  true              |        |
+					13.inorderLEFT(null);     |        |
+						null != null  false;  |        |
+					13.sout(13);              |        |
+					13.inorderRIGHT(null);    |        |
+						null != null  false;  |        |
+			18.sout(18);                               |
+			18.inorderRIGHT(20);                       |
+				20 != null  true;                      |
+					20.inorderLEFT(null);              |
+						null != null  false;           |
+					20.sout(20);                       |
+					20.inorderRIGHT(null);             |
+						null != null  false;           | 
+
+
+
+
+
+
+		
